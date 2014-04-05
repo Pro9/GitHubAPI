@@ -6,6 +6,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.GitHub;
+
+import java.io.IOException;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -16,6 +21,22 @@ public class MainActivity extends ActionBarActivity {
 
         TextView testGitConnection = (TextView)findViewById(R.id.testGitConnection);
         testGitConnection.setText("TESTEST");
+
+        /*
+        try {
+            GitHub github = GitHub.connectAnonymously();
+            GHRepository repo = github.getRepository("pro9/githubapi");
+            testGitConnection.setText("Repo-name: "+repo.getName());
+        }
+        catch(IOException e){
+            System.err.println("Caught IOException: " + e.getMessage());
+        }
+        */
+        /*
+        catch(NoClassDefFoundError c){
+            System.err.println("Caught NoClassDefFoundError: " + c.getMessage());
+        }
+        */
     }
 
 
